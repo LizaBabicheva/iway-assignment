@@ -1,0 +1,20 @@
+@use "_breakpoints" as size;
+@import "./_colors";
+
+@mixin text-style(
+  $font-size: 16px,
+  $line-height: 1.2,
+  $color: $color-text-black,
+  $breakpoint: md,
+  $font-size-md: 12px
+) {
+  font-size: $font-size;
+  line-height: $line-height;
+  color: $color;
+
+  @if $breakpoint and $font-size-md {
+    @include size.to($breakpoint) {
+      font-size: $font-size-md;
+    }
+  }
+}
