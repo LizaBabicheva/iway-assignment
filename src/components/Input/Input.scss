@@ -13,15 +13,19 @@
     max-width: 100%;
     min-width: 264px;
     margin-top: 8px;
-    padding: 8px;
+    padding: 16px;
     border: 1px solid $color-other-gray;
     border-radius: 12px;
     background-color: $color-other-light-gray;
     @include text.text-style($line-height: 1.5);
+
+    @include size.to(md) {
+      padding: 14px;
+    }
   }
 
   .error {
-    height: 20px;
+    height: 24px;
     @include text.text-style($font-size: 14px, $color: $color-text-error);
   }
 }

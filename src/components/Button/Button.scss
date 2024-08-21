@@ -1,0 +1,32 @@
+@use "../../assets/scss/_breakpoints" as size;
+@use "../../assets/scss/_text-style" as text;
+@import "../../assets/scss/_colors";
+
+.main-button {
+  width: 100%;
+  padding: 16px 0;
+  border-radius: 12px;
+  background-color: $color-cta-default;
+  @include text.text-style(
+    $color: $color-text-white,
+    $font-size: 20px,
+    $font-size-md: 16px
+  );
+
+  @include size.to(md) {
+    padding: 14px 0;
+  }
+
+  &:hover {
+    background-color: $color-cta-hover;
+  }
+
+  &:disabled {
+    background-color: $color-cta-disabled;
+    pointer-events: none;
+  }
+
+  &:active {
+    background-color: $color-cta-pressed;
+  }
+}
