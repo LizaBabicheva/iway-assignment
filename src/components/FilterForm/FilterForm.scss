@@ -1,0 +1,19 @@
+@use "../../assets/scss/_breakpoints" as size;
+
+.filter-form {
+  width: 100%;
+  display: flex;
+
+  .filter-input-container {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    column-gap: 10px;
+    cursor: pointer;
+
+    @include size.to(sm) {
+      flex-direction: column;
+    }
+  }
+}
