@@ -1,0 +1,14 @@
+@use "../../assets/scss/_breakpoints" as size;
+
+.rides-page {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  max-width: 1280px;
+  padding: 20px 30px 0;
+  row-gap: 10px;
+
+  @include size.to(md) {
+    padding: 16px;
+  }
+}

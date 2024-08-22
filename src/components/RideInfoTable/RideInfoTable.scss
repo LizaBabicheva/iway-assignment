@@ -1,0 +1,36 @@
+@use "../../assets/scss/_breakpoints" as size;
+@use "../../assets/scss/_text-style" as text;
+@import "../../assets/scss/_colors";
+
+.ride-info-table {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  padding: 16px;
+  box-sizing: border-box;
+  border: 1px solid $color-other-gray;
+  border-radius: 12px;
+  background-color: $color-other-light-gray;
+  row-gap: 10px;
+
+  .ride-info-list {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    column-gap: 20px;
+
+    @include text.text-style();
+
+    &:first-of-type {
+      @include text.text-style($font-weight: 600);
+    }
+
+    @include size.to(sm) {
+      flex-direction: column;
+    }
+
+    @include size.to(md) {
+      padding: 14px;
+    }
+  }
+}
