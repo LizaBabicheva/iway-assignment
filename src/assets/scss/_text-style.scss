@@ -5,12 +5,14 @@
   $font-size: 16px,
   $line-height: 1.2,
   $color: $color-text-black,
+  $font-weight: 400,
   $breakpoint: md,
   $font-size-md: 14px
 ) {
   font-size: $font-size;
   line-height: $line-height;
   color: $color;
+  font-weight: $font-weight;
 
   @if $breakpoint and $font-size-md {
     @include size.to($breakpoint) {
@@ -30,6 +32,7 @@
   font-size: $font-size;
   line-height: $line-height;
   color: $color;
+  font-weight: $font-weight;
 
   @if $breakpoint and $font-size-md {
     @include size.to($breakpoint) {
@@ -42,12 +45,14 @@
   $font-size: 14px,
   $line-height: 1.2,
   $color: $color-text-error,
+  $font-weight: 400,
   $breakpoint: md,
   $font-size-md: 12px
 ) {
   font-size: $font-size;
   line-height: $line-height;
   color: $color;
+  font-weight: $font-weight;
 
   @if $breakpoint and $font-size-md {
     @include size.to($breakpoint) {
