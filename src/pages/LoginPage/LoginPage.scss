@@ -1,0 +1,13 @@
+@use "../../assets/scss/_breakpoints" as size;
+
+.login-page {
+  display: flex;
+  width: 388px;
+  min-width: 320px;
+  padding: 150px 16px 0;
+
+  @include size.to(md) {
+    padding-top: 50px;
+    box-sizing: border-box;
+  }
+}

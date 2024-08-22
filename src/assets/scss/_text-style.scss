@@ -37,3 +37,21 @@
     }
   }
 }
+
+@mixin error-style(
+  $font-size: 14px,
+  $line-height: 1.2,
+  $color: $color-text-error,
+  $breakpoint: md,
+  $font-size-md: 12px
+) {
+  font-size: $font-size;
+  line-height: $line-height;
+  color: $color;
+
+  @if $breakpoint and $font-size-md {
+    @include size.to($breakpoint) {
+      font-size: $font-size-md;
+    }
+  }
+}
