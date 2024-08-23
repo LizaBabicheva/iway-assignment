@@ -2,9 +2,15 @@ import "./LoginForm.scss";
 import Input from "../Input/Input.jsx";
 import Button from "../Button/Button.jsx";
 
-function LoginForm() {
+function LoginForm({
+  onLogin,
+  loginValue,
+  passwordValue,
+  loginInputHandler,
+  passwordInputHandler,
+}) {
   return (
-    <form className="login-form">
+    <form className="login-form" onSubmit={onLogin}>
       <h1 className="login-form-heading">Вход</h1>
       <Input
         id="login"
@@ -12,17 +18,21 @@ function LoginForm() {
         label="Логин"
         type="text"
         placeholder="Введите логин"
+        value={loginValue}
         minLength={3}
         maxLength={20}
+        onChange={loginInputHandler}
       />
       <Input
         id="password"
         name="password"
         label="Пароль"
-        type="text"
+        type="password"
         placeholder="Введите пароль"
+        value={passwordValue}
         minLength={6}
         maxLength={20}
+        onChange={passwordInputHandler}
       />
       <Button className="main-button" type="submit">
         Войти

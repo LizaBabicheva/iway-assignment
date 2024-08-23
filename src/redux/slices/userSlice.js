@@ -1,6 +1,6 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import { loginApi } from "../api/authApi.js";
-import { setCookie } from "../../utils/browserUtils.js";
+import { getCookie, setCookie } from "../../utils/browserUtils.js";
 
 export const loginUser = createAsyncThunk(
   "user/loginUser",
@@ -14,10 +14,12 @@ export const loginUser = createAsyncThunk(
   }
 );
 
+const initialCookieToken = getCookie("accessToken");
+
 const initialState = {
   isAuthChecked: false,
-  isAuthenticated: false,
-  data: null,
+  isAuthenticated: !!initialCookieToken,
+  token: initialCookieToken,
   loginUserError: null,
   loginUserRequest: false,
 };
@@ -37,7 +39,7 @@ export const userSlice = createSlice({
         state.isAuthChecked = true;
       })
       .addCase(loginUser.fulfilled, (state, action) => {
-        state.data = action.payload;
+        state.token = action.payload;
         state.loginUserRequest = false;
         state.isAuthenticated = true;
         state.isAuthChecked = true;
