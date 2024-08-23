@@ -6,8 +6,10 @@ function Input({
   label,
   type,
   placeholder,
+  value,
   minLength,
   maxLength,
+  onChange,
   error,
 }) {
   return (
@@ -19,8 +21,10 @@ function Input({
         name={name}
         placeholder={placeholder}
         type={type}
+        value={value}
         minLength={minLength}
         maxLength={maxLength}
+        onChange={onChange}
       ></input>
       <span className="error">{error}</span>
     </label>

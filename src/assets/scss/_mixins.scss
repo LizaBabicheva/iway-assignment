@@ -1,0 +1,12 @@
+@import "../../assets/scss/_colors";
+
+// Custom border
+@mixin custom-border(
+  $color: $color-other-gray,
+  $radius: 12px,
+  $bg-color: $color-other-light-gray
+) {
+  border: 1px solid $color;
+  border-radius: $radius;
+  background-color: $bg-color;
+}

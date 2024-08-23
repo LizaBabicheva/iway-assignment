@@ -1,0 +1,15 @@
+@use "../../assets/scss/_text-style" as text;
+@use "../../assets/scss/_mixins" as mixin;
+
+.selector-label {
+  display: flex;
+  align-items: center;
+  @include text.text-style($font-weight: 600);
+
+  .selector {
+    padding: 5px;
+    margin-left: 20px;
+    @include mixin.custom-border();
+    @include text.text-style();
+  }
+}

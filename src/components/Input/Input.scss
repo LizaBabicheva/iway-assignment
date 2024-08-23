@@ -1,5 +1,6 @@
 @use "../../assets/scss/_breakpoints" as size;
 @use "../../assets/scss/_text-style" as text;
+@use "../../assets/scss/_mixins" as mixin;
 @import "../../assets/scss/_colors";
 
 .label {
@@ -14,9 +15,7 @@
     width: 100%;
     box-sizing: border-box;
     padding: 16px;
-    border: 1px solid $color-other-gray;
-    border-radius: 12px;
-    background-color: $color-other-light-gray;
+    @include mixin.custom-border();
     @include text.text-style($line-height: 1.5);
 
     @include size.to(md) {

@@ -1,5 +1,6 @@
 @use "../../assets/scss/_breakpoints" as size;
 @use "../../assets/scss/_text-style" as text;
+@use "../../assets/scss/_mixins" as mixin;
 @import "../../assets/scss/_colors";
 
 .ride-info-table {
@@ -8,9 +9,7 @@
   flex-direction: column;
   padding: 16px;
   box-sizing: border-box;
-  border: 1px solid $color-other-gray;
-  border-radius: 12px;
-  background-color: $color-other-light-gray;
+  @include mixin.custom-border();
   row-gap: 10px;
 
   .ride-info-list {

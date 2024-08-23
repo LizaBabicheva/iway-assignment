@@ -1,8 +1,12 @@
 @import "./assets/scss/normalize.css";
 @import "./assets/fonts/fonts.css";
+@import "./assets/scss/_colors";
 
 :root {
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.2;
+  color: $color-text-black;
+  font-weight: 400;
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
