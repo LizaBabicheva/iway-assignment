@@ -3,7 +3,7 @@ import LoginForm from "../../components/LoginForm/LoginForm.jsx";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { useEffect, useState } from "react";
-import { loginUser } from "../../redux/slices/userSlice.js";
+import { loginUser } from "../../redux/slices/authSlice.js";
 
 function LoginPage() {
   const dispatch = useDispatch();

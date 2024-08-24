@@ -1,4 +1,4 @@
-import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
+import { createAction, createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import { loginApi } from "../api/authApi.js";
 import { getCookie, setCookie } from "../../utils/browserUtils.js";
 
@@ -14,17 +14,18 @@ export const loginUser = createAsyncThunk(
   }
 );
 
+export const logoutUser = createAction("LOGOUT");
+
 const initialCookieToken = getCookie("accessToken");
 
 const initialState = {
-  isAuthChecked: false,
   isAuthenticated: !!initialCookieToken,
   token: initialCookieToken,
   loginUserError: null,
   loginUserRequest: false,
 };
 
-export const userSlice = createSlice({
+export const authSlice = createSlice({
   name: "user",
   initialState,
   extraReducers: (builder) => {
@@ -36,15 +37,17 @@ export const userSlice = createSlice({
       .addCase(loginUser.rejected, (state, action) => {
         state.loginUserRequest = false;
         state.loginUserError = action.payload;
-        state.isAuthChecked = true;
       })
       .addCase(loginUser.fulfilled, (state, action) => {
         state.token = action.payload;
         state.loginUserRequest = false;
         state.isAuthenticated = true;
-        state.isAuthChecked = true;
+      })
+      .addCase(logoutUser, (state) => {
+        state.token = null;
+        state.isAuthenticated = false;
       });
   },
 });
 
-export const userReducer = userSlice.reducer;
+export const userReducer = authSlice.reducer;
