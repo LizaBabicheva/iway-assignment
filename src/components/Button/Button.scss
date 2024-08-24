@@ -35,3 +35,27 @@
     width: fit-content;
   }
 }
+
+.text-btn {
+  background-color: transparent;
+  max-width: fit-content;
+  padding: 12px 5px;
+  @include text.text-style($color: $color-cta-default);
+
+  @include size.from(md) {
+    padding: 8px 5px;
+  }
+
+  &:hover {
+    color: $color-cta-hover;
+  }
+
+  &:disabled {
+    color: $color-cta-disabled;
+    pointer-events: none;
+  }
+
+  &:active {
+    color: $color-cta-pressed;
+  }
+}
