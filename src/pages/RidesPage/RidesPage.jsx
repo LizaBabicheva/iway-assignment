@@ -99,7 +99,7 @@ function RidesPage() {
           </ul>
           {!isLoading &&
             !isFetching &&
-            ridesInfo.result.page_data.total_items > 0 && (
+            ridesInfo?.result?.page_data?.total_items > 0 && (
               <Pagination
                 onChange={onPaginatorChange}
                 defaultCurrent={page}

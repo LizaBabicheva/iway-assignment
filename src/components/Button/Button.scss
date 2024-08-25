@@ -10,6 +10,7 @@
   padding: 16px;
   border-radius: 12px;
   background-color: $color-cta-default;
+  transition: background-color 0.3s ease;
   @include text.text-style($color: $color-text-white, $line-height: 1.5);
 
   @include size.to(md) {
@@ -40,6 +41,7 @@
   background-color: transparent;
   max-width: fit-content;
   padding: 12px 5px;
+  transition: color 0.3s ease;
   @include text.text-style($color: $color-cta-default);
 
   @include size.from(md) {

@@ -1,6 +1,7 @@
 @use "../../assets/scss/_breakpoints" as size;
 
 .login-page {
+  min-height: 100vh;
   display: flex;
   width: 388px;
   min-width: 320px;

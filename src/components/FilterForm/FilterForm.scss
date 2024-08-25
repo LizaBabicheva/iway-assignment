@@ -1,31 +1,45 @@
 @use "../../assets/scss/_breakpoints" as size;
+@use "../../assets/scss/_text-style" as text;
 
-.filter-container {
+.filter-form {
+  width: 100%;
   display: flex;
-  margin-bottom: 20px;
+  flex-direction: column;
 
-  .filter-form {
+  .filter-input-fieldset {
     width: 100%;
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
+    align-items: flex-start;
+    column-gap: 10px;
+    cursor: pointer;
 
-    .filter-input-container {
-      width: 100%;
+    @include size.to(sm) {
+      flex-direction: column;
+    }
+  }
+
+  .filter-status-fieldset {
+    display: flex;
+    .filter-status-legend {
+      margin-bottom: 10px;
+      @include text.text-style($font-weight: 500);
+    }
+
+    .filter-checkbox-wrap {
       display: flex;
       flex-direction: row;
-      align-items: flex-start;
-      column-gap: 10px;
-      cursor: pointer;
+      flex-wrap: wrap;
+      row-gap: 5px;
 
       @include size.to(sm) {
         flex-direction: column;
       }
     }
 
-    .filter-status-selector {
-      @include size.to(sm) {
-        margin-top: 20px;
-      }
+    @include size.to(sm) {
+      flex-direction: column;
+      margin-top: 20px;
     }
   }
 }

@@ -21,20 +21,21 @@ function FilterForm({
   };
 
   return (
-    <div className="filter-container">
-      <form className="filter-form" onSubmit={filterInputSubmit}>
-        <fieldset className="filter-input-container">
-          <Input
-            placeholder="Введите фамилию или email"
-            type="text"
-            onChange={handleFilterInputChange}
-            value={filterInputValue}
-          />
-          <Button className="main-button search-button" type="submit">
-            Найти
-          </Button>
-        </fieldset>
-        <fieldset className="filter-status-selector">
+    <form className="filter-form" onSubmit={filterInputSubmit}>
+      <fieldset className="filter-input-fieldset">
+        <Input
+          placeholder="Введите фамилию или email"
+          type="text"
+          onChange={handleFilterInputChange}
+          value={filterInputValue}
+        />
+        <Button className="main-button search-button" type="submit">
+          Найти
+        </Button>
+      </fieldset>
+      <fieldset className="filter-status-fieldset">
+        <legend className="filter-status-legend">Статус заказа:</legend>
+        <div className="filter-checkbox-wrap">
           {rideStatusArray.map((el, i) => (
             <Checkbox
               key={i}
@@ -43,9 +44,9 @@ function FilterForm({
               onCheckboxChange={() => handleCheckboxChange(Object.keys(el)[0])}
             />
           ))}
-        </fieldset>
-      </form>
-    </div>
+        </div>
+      </fieldset>
+    </form>
   );
 }
 

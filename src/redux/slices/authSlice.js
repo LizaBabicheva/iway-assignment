@@ -7,9 +7,11 @@ export const loginUser = createAsyncThunk(
   async ({ login, password }, { rejectWithValue }) => {
     try {
       const response = await loginApi({ login, password });
-      setCookie("accessToken", response.result.token);
+      const token = response.result.token;
+      setCookie("accessToken", token);
+      return token;
     } catch (err) {
-      return rejectWithValue(err.response.data); // обработка ошибки
+      return rejectWithValue(err.response.data);
     }
   }
 );
