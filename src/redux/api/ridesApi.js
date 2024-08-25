@@ -23,13 +23,13 @@ export const getRides = createApi({
       }) => {
         const filter = [];
         if (names && names.length > 0) {
-          filter.append(`names=${names}`);
+          filter.push(`names=${names}`);
         }
         if (email && email.length > 0) {
-          filter.append(`emails=${email}`);
+          filter.push(`email=${email}`);
         }
         if (orderStatus && orderStatus.length > 0) {
-          filter.append(`order_status=${orderStatus}`);
+          filter.push(`order_status=${orderStatus}`);
         }
         let filterString = "";
         if (filter.length > 0) {

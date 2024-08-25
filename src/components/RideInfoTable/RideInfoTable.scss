@@ -12,17 +12,27 @@
   @include mixin.custom-border();
   row-gap: 10px;
 
+  .main-ride-info {
+    display: flex;
+    flex-direction: column;
+    @include text.text-style($font-weight: 600);
+  }
+
+  .main-ride-info-list {
+    display: flex;
+  }
+
   .ride-info-list {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     flex-wrap: wrap;
     column-gap: 20px;
 
     @include text.text-style();
 
-    &:first-of-type {
-      @include text.text-style($font-weight: 600);
-    }
+    //&:first-of-type {
+    //  @include text.text-style($font-weight: 600);
+    //}
 
     @include size.to(sm) {
       flex-direction: column;
