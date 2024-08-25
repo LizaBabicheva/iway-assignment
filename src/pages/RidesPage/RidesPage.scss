@@ -1,4 +1,6 @@
 @use "../../assets/scss/_breakpoints" as size;
+@use "../../assets/scss/_text-style" as text;
+@import "../../assets/scss/_colors";
 
 .rides-page {
   width: 100%;
@@ -12,6 +14,16 @@
     display: flex;
     flex-direction: column;
     row-gap: 20px;
+  }
+
+  .rides-list-error {
+    margin: 20px auto;
+    @include text.text-style($color: $color-text-error);
+  }
+
+  .pagination {
+    max-width: 100% !important;
+    flex-wrap: wrap;
   }
 
   @include size.to(md) {

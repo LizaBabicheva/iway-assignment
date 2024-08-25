@@ -83,7 +83,7 @@ function RidesPage() {
             {!isLoading && isFetching ? (
               <Preloader />
             ) : ridesInfo?.result?.orders?.length === 0 ? (
-              <p>Ничего не найдено</p>
+              <p className="rides-list-error">Поездки не найдены</p>
             ) : (
               ridesInfo?.result?.orders?.map((el, id) => (
                 <RideInfoTable
@@ -99,8 +99,10 @@ function RidesPage() {
           </ul>
           {!isLoading &&
             !isFetching &&
+            ridesInfo?.result?.orders?.length > 0 &&
             ridesInfo?.result?.page_data?.total_items > 0 && (
               <Pagination
+                className="pagination"
                 onChange={onPaginatorChange}
                 defaultCurrent={page}
                 defaultPageSize={DEFAULT_PAGE_SIZE}

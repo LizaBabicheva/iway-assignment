@@ -10,8 +10,6 @@ function LoginPage() {
   const navigate = useNavigate();
   const [login, setLogin] = useState("");
   const [password, setPassword] = useState("");
-
-  // TODO Move to Selectors??
   const isAuthenticated = useSelector((state) => state.user.isAuthenticated);
 
   useEffect(() => {
