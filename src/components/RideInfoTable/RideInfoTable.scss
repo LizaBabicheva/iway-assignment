@@ -7,39 +7,99 @@
   width: 100%;
   display: flex;
   flex-direction: column;
-  padding: 16px;
+  padding: 10px;
   box-sizing: border-box;
   @include mixin.custom-border();
-  row-gap: 10px;
 
-  .main-ride-info {
+  .main-ride-info-wrap {
     display: flex;
-    flex-direction: column;
-    @include text.text-style($font-weight: 600);
-  }
+    flex-direction: row;
+    justify-content: space-between;
 
-  .main-ride-info-list {
-    display: flex;
-  }
-
-  .ride-info-list {
-    display: flex;
-    flex-direction: column;
-    flex-wrap: wrap;
-    column-gap: 20px;
-
-    @include text.text-style();
-
-    //&:first-of-type {
-    //  @include text.text-style($font-weight: 600);
-    //}
-
-    @include size.to(sm) {
+    .main-ride-info {
+      display: flex;
       flex-direction: column;
+      @include text.text-style($font-weight: 500);
     }
 
-    @include size.to(md) {
-      padding: 14px;
+    .ride-status {
+      margin-bottom: 5px;
+      @include text.text-style($color: $color-cta-default, $font-weight: 500);
+    }
+
+    .passengers-name-list {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      column-gap: 20px;
+
+      .ride-info-list-item {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        column-gap: 5px;
+        @include text.text-style($font-weight: 500);
+      }
+    }
+
+    .arrow-button {
+      width: 45px;
+      height: 45px;
+      border: none;
+      background: none;
+      cursor: pointer;
+
+      @include size.to(sm) {
+        width: 20px;
+        height: 20px;
+      }
+
+      .arrow-icon {
+        width: 15px;
+        height: 15px;
+        margin: auto;
+        transition:
+          transform 0.3s,
+          fill 0.3s;
+        fill: $color-text-black;
+
+        &:hover {
+          fill: $color-cta-hover;
+        }
+        &:active {
+          fill: $color-cta-pressed;
+        }
+
+        &.is-active {
+          fill: $color-cta-pressed;
+          transform: rotate(180deg);
+        }
+      }
+    }
+  }
+
+  .additional-ride-info {
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    transition:
+      max-height,
+      padding-top 0.3s;
+
+    &.is-show-additional-info {
+      max-height: 200px;
+      padding-top: 10px;
+    }
+
+    &.is-hide-additional-info {
+      max-height: 0;
+    }
+
+    .additional-ride-info-list {
+      display: flex;
+      flex-direction: column;
+      row-gap: 5px;
+      @include text.text-style();
     }
   }
 }
