@@ -1,8 +1,7 @@
 import "./App.scss";
 import { Routes, Route } from "react-router-dom";
-import LoginPage from "../../pages/LoginPage/LoginPage.jsx";
-import RidesPage from "../../pages/RidesPage/RidesPage.jsx";
-import { ProtectedRoute } from "../ProtectedRoute/ProtectedRoute.jsx";
+import { LoginPage, RidesPage } from "../../pages/pagesImport.js";
+import { ProtectedRoute } from "../componentsImport.js";
 
 function App() {
   return (

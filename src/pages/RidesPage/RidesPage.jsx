@@ -1,9 +1,11 @@
 import "./RidesPage.scss";
-import FilterForm from "../../components/FilterForm/FilterForm.jsx";
-import RideInfoTable from "../../components/RideInfoTable/RideInfoTable.jsx";
 import { useEffect, useState } from "react";
 import { useListRidesQuery } from "../../redux/api/ridesApi.js";
-import Button from "../../components/Button/Button.jsx";
+import {
+  Button,
+  FilterForm,
+  RideInfoTable,
+} from "../../components/componentsImport.js";
 import { logoutUser } from "../../redux/slices/authSlice.js";
 import { useDispatch } from "react-redux";
 import { clearAuthCookie } from "../../utils/browserUtils.js";

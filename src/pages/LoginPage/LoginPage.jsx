@@ -1,5 +1,5 @@
 import "./LoginPage.scss";
-import LoginForm from "../../components/LoginForm/LoginForm.jsx";
+import { LoginForm } from "../../components/componentsImport.js";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { useEffect, useState } from "react";

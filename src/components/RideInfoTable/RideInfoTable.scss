@@ -1,5 +1,4 @@
 @use "../../assets/scss/_breakpoints" as size;
-@use "../../assets/scss/_text-style" as text;
 @use "../../assets/scss/_mixins" as mixin;
 @import "../../assets/scss/_colors";
 
@@ -19,12 +18,12 @@
     .main-ride-info {
       display: flex;
       flex-direction: column;
-      @include text.text-style($font-weight: 500);
+      @include mixin.text-style($font-weight: 500);
     }
 
     .ride-status {
       margin-bottom: 5px;
-      @include text.text-style($color: $color-cta-default, $font-weight: 500);
+      @include mixin.text-style($color: $color-cta-default, $font-weight: 500);
     }
 
     .passengers-name-list {
@@ -38,7 +37,7 @@
         flex-direction: row;
         flex-wrap: wrap;
         column-gap: 5px;
-        @include text.text-style($font-weight: 500);
+        @include mixin.text-style($font-weight: 500);
       }
     }
 
@@ -99,7 +98,7 @@
       display: flex;
       flex-direction: column;
       row-gap: 5px;
-      @include text.text-style();
+      @include mixin.text-style();
     }
   }
 }

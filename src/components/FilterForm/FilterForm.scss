@@ -1,5 +1,5 @@
 @use "../../assets/scss/_breakpoints" as size;
-@use "../../assets/scss/_text-style" as text;
+@use "../../assets/scss/_mixins" as mixin;
 
 .filter-form {
   width: 100%;
@@ -23,7 +23,7 @@
     display: flex;
     .filter-status-legend {
       margin-bottom: 10px;
-      @include text.text-style($font-weight: 500);
+      @include mixin.text-style($font-weight: 500);
     }
 
     .filter-checkbox-wrap {

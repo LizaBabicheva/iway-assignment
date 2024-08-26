@@ -1,7 +1,5 @@
 import "./FilterForm.scss";
-import Input from "../Input/Input.jsx";
-import Button from "../Button/Button.jsx";
-import Checkbox from "../Checkbox/Checkbox.jsx";
+import { Input, Button, Checkbox } from "../componentsImport.js";
 import { rideStatusArray } from "../../utils/constants/rideStatusArray.js";
 
 function FilterForm({

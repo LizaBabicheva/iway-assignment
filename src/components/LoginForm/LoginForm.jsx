@@ -1,6 +1,5 @@
 import "./LoginForm.scss";
-import Input from "../Input/Input.jsx";
-import Button from "../Button/Button.jsx";
+import { Input, Button } from "../componentsImport.js";
 
 function LoginForm({
   onLogin,

@@ -1,5 +1,5 @@
 @use "../../assets/scss/_breakpoints" as size;
-@use "../../assets/scss/_text-style" as text;
+@use "../../assets/scss/_mixins" as mixin;
 @import "../../assets/scss/_colors";
 
 .rides-page {
@@ -18,7 +18,7 @@
 
   .rides-list-error {
     margin: 20px auto;
-    @include text.text-style($color: $color-text-error);
+    @include mixin.text-style($color: $color-text-error);
   }
 
   .pagination {

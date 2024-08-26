@@ -1,4 +1,4 @@
-@use "../../assets/scss/text-style" as text;
+@use "../../assets/scss/_mixins" as mixin;
 
 .login-form {
   width: 100%;
@@ -8,6 +8,6 @@
 
   .login-form-heading {
     margin-bottom: 20px;
-    @include text.heading-style();
+    @include mixin.heading-text-style();
   }
 }
