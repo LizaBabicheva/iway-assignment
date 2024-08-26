@@ -7,6 +7,8 @@ function LoginForm({
   passwordValue,
   loginInputHandler,
   passwordInputHandler,
+  isButtonDisabled,
+  errors,
 }) {
   return (
     <form className="login-form" onSubmit={onLogin}>
@@ -18,9 +20,8 @@ function LoginForm({
         type="text"
         placeholder="Введите логин"
         value={loginValue}
-        minLength={3}
-        maxLength={20}
         onChange={loginInputHandler}
+        errors={errors?.login}
       />
       <Input
         id="password"
@@ -29,11 +30,10 @@ function LoginForm({
         type="password"
         placeholder="Введите пароль"
         value={passwordValue}
-        minLength={6}
-        maxLength={20}
         onChange={passwordInputHandler}
+        errors={errors?.password}
       />
-      <Button className="main-button" type="submit">
+      <Button className="main-button" type="submit" disabled={isButtonDisabled}>
         Войти
       </Button>
     </form>

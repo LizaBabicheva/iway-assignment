@@ -7,10 +7,8 @@ function Input({
   type,
   placeholder,
   value,
-  minLength,
-  maxLength,
   onChange,
-  error,
+  errors,
 }) {
   return (
     <label className="label" htmlFor={id}>
@@ -22,11 +20,14 @@ function Input({
         placeholder={placeholder}
         type={type}
         value={value}
-        minLength={minLength}
-        maxLength={maxLength}
         onChange={onChange}
       ></input>
-      <span className="error">{error}</span>
+      {errors?.length > 0 &&
+        errors?.map((error, index) => (
+          <span className="error" key={index}>
+            {error}
+          </span>
+        ))}
     </label>
   );
 }
