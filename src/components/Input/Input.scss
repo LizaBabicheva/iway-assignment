@@ -1,0 +1,29 @@
+@use "../../assets/scss/_breakpoints" as size;
+@use "../../assets/scss/_mixins" as mixin;
+@import "../../assets/scss/_colors";
+
+.label {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  margin-bottom: 20px;
+  @include mixin.text-style();
+
+  .input {
+    display: flex;
+    width: 100%;
+    box-sizing: border-box;
+    padding: 16px;
+    @include mixin.custom-border();
+    @include mixin.text-style($line-height: 1.5);
+
+    @include size.to(md) {
+      padding: 14px;
+    }
+  }
+
+  .error {
+    @include mixin.error-text-style();
+  }
+}

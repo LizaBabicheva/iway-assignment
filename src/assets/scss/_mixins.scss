@@ -1,0 +1,80 @@
+@use "_breakpoints" as size;
+@import "../../assets/scss/_colors";
+
+// Text-style
+@mixin text-style(
+  $font-family: Inter,
+  $font-size: 16px,
+  $line-height: 1.2,
+  $color: $color-text-black,
+  $font-weight: 400,
+  $breakpoint: md,
+  $font-size-md: 14px
+) {
+  font-family: $font-family;
+  font-size: $font-size;
+  line-height: $line-height;
+  color: $color;
+  font-weight: $font-weight;
+
+  @if $breakpoint and $font-size-md {
+    @include size.to($breakpoint) {
+      font-size: $font-size-md;
+    }
+  }
+}
+
+@mixin heading-text-style(
+  $font-family: Inter,
+  $font-size: 40px,
+  $line-height: 1.2,
+  $color: $color-text-black,
+  $breakpoint: md,
+  $font-size-md: 28px,
+  $font-weight: 600
+) {
+  font-family: $font-family;
+  font-size: $font-size;
+  line-height: $line-height;
+  color: $color;
+  font-weight: $font-weight;
+
+  @if $breakpoint and $font-size-md {
+    @include size.to($breakpoint) {
+      font-size: $font-size-md;
+    }
+  }
+}
+
+@mixin error-text-style(
+  $font-family: Inter,
+  $font-size: 14px,
+  $line-height: 1.2,
+  $color: $color-text-error,
+  $font-weight: 400,
+  $breakpoint: md,
+  $font-size-md: 12px
+) {
+  font-family: $font-family;
+  font-size: $font-size;
+  line-height: $line-height;
+  color: $color;
+  font-weight: $font-weight;
+
+  @if $breakpoint and $font-size-md {
+    @include size.to($breakpoint) {
+      font-size: $font-size-md;
+    }
+  }
+}
+
+// Custom border
+@mixin custom-border(
+  $color: $color-other-gray,
+  $radius: 12px,
+  $bg-color: $color-other-light-gray
+) {
+  border: 1px solid $color;
+  border-radius: $radius;
+  background-color: $bg-color;
+}

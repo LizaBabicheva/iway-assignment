@@ -1,0 +1,15 @@
+@use "../../assets/scss/_breakpoints" as size;
+@use "../../assets/scss/_mixins" as mixin;
+
+.checkbox-label {
+  width: 250px;
+  margin-right: 20px;
+  display: flex;
+  flex-direction: row;
+  gap: 5px;
+  @include mixin.text-style();
+
+  @include size.to(sm) {
+    width: fit-content;
+  }
+}

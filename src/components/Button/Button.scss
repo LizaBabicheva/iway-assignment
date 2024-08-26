@@ -1,0 +1,63 @@
+@use "../../assets/scss/_breakpoints" as size;
+@use "../../assets/scss/_mixins" as mixin;
+@import "../../assets/scss/_colors";
+
+.main-button {
+  display: flex;
+  justify-content: center;
+  height: fit-content;
+  width: 100%;
+  padding: 16px;
+  border-radius: 12px;
+  background-color: $color-cta-default;
+  transition: background-color 0.3s ease;
+  @include mixin.text-style($color: $color-text-white, $line-height: 1.5);
+
+  @include size.to(md) {
+    padding: 14px;
+  }
+
+  &:hover {
+    background-color: $color-cta-hover;
+  }
+
+  &:disabled {
+    background-color: $color-cta-disabled;
+    pointer-events: none;
+  }
+
+  &:active {
+    background-color: $color-cta-pressed;
+  }
+}
+
+.search-button {
+  @include size.from(sm) {
+    width: fit-content;
+  }
+}
+
+.text-btn {
+  background-color: transparent;
+  max-width: fit-content;
+  padding: 12px 5px;
+  transition: color 0.3s ease;
+  @include mixin.text-style($color: $color-cta-default);
+
+  @include size.from(md) {
+    padding: 8px 5px;
+  }
+
+  &:hover {
+    color: $color-cta-hover;
+  }
+
+  &:disabled {
+    color: $color-cta-disabled;
+    pointer-events: none;
+  }
+
+  &:active {
+    color: $color-cta-pressed;
+  }
+}

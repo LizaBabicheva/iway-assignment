@@ -1,0 +1,32 @@
+@use "../../assets/scss/_breakpoints" as size;
+@use "../../assets/scss/_mixins" as mixin;
+@import "../../assets/scss/_colors";
+
+.rides-page {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  max-width: 1280px;
+  padding: 20px 30px;
+  row-gap: 20px;
+
+  .rides-list {
+    display: flex;
+    flex-direction: column;
+    row-gap: 20px;
+  }
+
+  .rides-list-error {
+    margin: 20px auto;
+    @include mixin.text-style($color: $color-text-error);
+  }
+
+  .pagination {
+    max-width: 100% !important;
+    flex-wrap: wrap;
+  }
+
+  @include size.to(md) {
+    padding: 16px;
+  }
+}

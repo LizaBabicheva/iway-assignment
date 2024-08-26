@@ -1,0 +1,19 @@
+@use "../../assets/scss/_mixins" as mixin;
+@import "../../assets/scss/_colors";
+
+.login-form {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+
+  .login-form-heading {
+    margin-bottom: 20px;
+    @include mixin.heading-text-style();
+  }
+
+  .login-error {
+    margin-top: 20px;
+    @include mixin.text-style($color: $color-text-error);
+  }
+}
