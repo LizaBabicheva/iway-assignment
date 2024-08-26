@@ -1,5 +1,6 @@
 import "./LoginForm.scss";
 import { Input, Button } from "../componentsImport.js";
+import { useSelector } from "react-redux";
 
 function LoginForm({
   onLogin,
@@ -10,6 +11,8 @@ function LoginForm({
   isButtonDisabled,
   errors,
 }) {
+  const loginUserError = useSelector((state) => state.user.loginUserError);
+
   return (
     <form className="login-form" onSubmit={onLogin}>
       <h1 className="login-form-heading">Вход</h1>
@@ -36,6 +39,13 @@ function LoginForm({
       <Button className="main-button" type="submit" disabled={isButtonDisabled}>
         Войти
       </Button>
+      {loginUserError && (
+        <p className="login-error">
+          Не удалось авторизоваться.
+          <br />
+          Проверьте данные и повторите попытку.
+        </p>
+      )}
     </form>
   );
 }

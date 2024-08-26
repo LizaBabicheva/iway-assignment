@@ -11,7 +11,10 @@ export const loginUser = createAsyncThunk(
       setCookie("accessToken", token);
       return token;
     } catch (err) {
-      return rejectWithValue(err.response.data);
+      console.error("Login error:", err);
+      return rejectWithValue(
+        err.response?.data?.message || err.message || "Ошибка авторизации"
+      );
     }
   }
 );
@@ -38,7 +41,7 @@ export const authSlice = createSlice({
       })
       .addCase(loginUser.rejected, (state, action) => {
         state.loginUserRequest = false;
-        state.loginUserError = action.payload;
+        state.loginUserError = action.payload || "Ошибка авторизации";
       })
       .addCase(loginUser.fulfilled, (state, action) => {
         state.token = action.payload;
