@@ -7,6 +7,7 @@ function FilterForm({
   filterInputSubmit,
   filterInputValue,
   setOrderStatus,
+  disabled,
 }) {
   const handleCheckboxChange = (checkboxValue) => {
     setOrderStatus((prevOrderStatuses) => {
@@ -27,7 +28,11 @@ function FilterForm({
           onChange={handleFilterInputChange}
           value={filterInputValue}
         />
-        <Button className="main-button search-button" type="submit">
+        <Button
+          className="main-button search-button"
+          type="submit"
+          disabled={disabled}
+        >
           Найти
         </Button>
       </fieldset>

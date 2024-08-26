@@ -80,6 +80,7 @@ function RidesPage() {
             filterInputSubmit={handleFilterInputSubmit}
             orderStatus={orderStatus}
             setOrderStatus={setOrderStatus}
+            disabled={isFetching || isLoading}
           />
           <ul className="rides-list">
             {!isLoading && isFetching ? (
